@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#030914"><meta name="description" content="AETHER Weather with Aether AI, world time, maps and directions.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<title>AETHER Weather + Aether AI</title>
+</head>
+<body>
+<main class="app-shell"><header class="hero">
+<div class="nebula"></div><img class="logo" src="assets/aether-logo.jpg" alt="AETHER"><p class="tagline">ATMOSPHERIC INTELLIGENCE · AETHER AI</p>
+<section class="ai-panel">
+<div class="ai-head"><div class="ai-brand"><span class="ai-orb">✦</span><div><h2>Aether AI</h2><p>Weather · time · places · maps · directions · general AI</p></div></div><button id="micBtn" class="mic" type="button">🎙️</button></div>
+<div class="ai-controls"><select id="languageSelect"><option value="auto">Auto / AI language</option><option value="en-IN">English</option><option value="ta-IN">தமிழ்</option><option value="hi-IN">हिन्दी</option><option value="te-IN">తెలుగు</option><option value="ml-IN">മലയാളം</option><option value="kn-IN">ಕನ್ನಡ</option><option value="bn-IN">বাংলা</option><option value="mr-IN">मराठी</option><option value="gu-IN">ગુજરાતી</option><option value="pa-IN">ਪੰਜਾਬੀ</option><option value="ar-SA">العربية</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="de-DE">Deutsch</option><option value="pt-BR">Português</option><option value="it-IT">Italiano</option><option value="ja-JP">日本語</option><option value="ko-KR">한국어</option><option value="zh-CN">中文</option></select><button id="stopVoiceBtn" class="ghost" disabled>Stop voice</button></div>
+<p id="aiStatus" class="ai-status">Aether AI ready.</p><div id="aiAnswer" class="ai-answer">Try: “What is the weather of Karaikudi?” or “Give me directions to Chennai.”</div>
+</section>
+<form id="searchForm" class="search"><div class="search-box"><input id="cityInput" autocomplete="off" placeholder="Search any city, state, country or place worldwide..."><div id="locationResults" class="location-results" hidden></div></div><button type="submit">Search</button><button type="button" id="locationBtn" class="ghost">⌖</button><button type="button" id="unitBtn" class="ghost">°C</button></form>
+<p id="status" class="status">Loading weather…</p>
+<section class="current-card"><div><h1 id="place">—</h1><p id="placeMeta">—</p><p id="localDate">—</p><div class="world-time"><span>Local time</span><strong id="localTime">—</strong></div><p id="condition">—</p><div class="temperature"><span id="temperature">—</span><sup>°</sup></div><p id="feelsLike" class="muted">Feels like —</p></div><div id="weatherGlyph" class="weather-glyph">☁</div></section>
+<section class="metrics"><article><span>Humidity</span><strong id="humidity">—</strong></article><article><span>Wind</span><strong id="wind">—</strong></article><article><span>Visibility</span><strong id="visibility">—</strong></article><article><span>Pressure</span><strong id="pressure">—</strong></article></section>
+<section class="section"><div class="section-title"><h2>7-day forecast</h2><span id="timezoneLabel">—</span></div><div id="forecast" class="forecast"></div></section>
+<section class="details"><div><span>Sunrise</span><strong id="sunrise">—</strong></div><div><span>Sunset</span><strong id="sunset">—</strong></div><div><span>Rain chance</span><strong id="rainChance">—</strong></div></section>
+<section class="map-panel"><div class="section-title"><h2>🗺️ AETHER Map & Directions</h2><span id="distanceLabel">Select a destination</span></div><div class="route-controls"><button id="useCurrentAsFrom" class="ghost" type="button">Use my location</button><input id="fromInput" placeholder="From place"><input id="toInput" placeholder="To place"><button id="routeBtn" type="button">Route</button></div><div id="routeStatus" class="status">Search two places or use your current location.</div><div id="map"></div><div id="placeInfo" class="place-info">Select a place to see coordinates, country, region and time zone.</div></section>
+<footer><span>Weather: Open-Meteo · Map: OpenStreetMap/Leaflet · Routing: OSRM</span><button id="installBtn" class="install" hidden>Install AETHER</button></footer>
+</header></main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script><script src="app.js"></script>
+</body></html>
